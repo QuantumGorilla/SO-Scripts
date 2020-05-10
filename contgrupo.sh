@@ -29,11 +29,14 @@ cd $ruta
 if [ -d $grupo ]
 then
 cd $grupo
+#Cuenta los ficheros que se encuentren dentro del grupo especificado
 echo El número de ficheros en $grupo es:
-find . -type f | wc -l #cuenta solo ficheros.
+find . -type f | wc -l
 else
+#Si no existe el archivo imprime el error
 echo "El archivo no existe"
 fi
 else
+#Si no existe la ruta imprime el error
 echo "La ruta no existe"
 fi
