@@ -11,8 +11,8 @@ if [ -n "$1" ] && [ -n "$2" ]; then
 		if [ -d $grupo ]; then
 			cd $grupo
 			#Cuenta los ficheros que se encuentren 			dentro del grupo especificado
-			echo Número de archivos del grupo $grupo en 				$ruta es:
-			find . -type f | wc -l
+			archivos=$(find . -type f | wc -l)
+			echo Número de archivos del grupo $grupo en 				$ruta es $archivos.
 		else
 			#Si no existe el archivo imprime el error
 			echo "El grupo no existe"
