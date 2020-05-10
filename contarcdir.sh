@@ -10,6 +10,7 @@ if [ "$ruta" ]; then
 	#Cuenta archivos
 	archivos=$(find . -type f | wc -l)
 	echo Número de archivos es: $archivos
+	#Cuenta los directorios (incluido en el que se encuentra)
 	directorios=$(find . -type d | wc -l)
 	echo Número de directorios es: $directorios
 else
