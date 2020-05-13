@@ -1,7 +1,8 @@
 #! /bin/bash
 #Nos posicionamos en la carpeta del usuario
 cd ~
-if [ -n "$1" ] && [ -n "$2" ]; then
+aux=2
+if [ "$#" -eq "$aux" ]; then
 	grupo=$1
 	ruta=$2
 	#Busca la ruta
@@ -10,9 +11,9 @@ if [ -n "$1" ] && [ -n "$2" ]; then
 		#Busca el directorio
 		if [ -d $grupo ]; then
 			cd $grupo
-			#Cuenta los ficheros que se encuentren 			dentro del grupo especificado
+			#Cuenta los ficheros que se encuentren dentro del grupo especificado
 			archivos=$(find . -type f | wc -l)
-			echo Número de archivos del grupo $grupo en 				$ruta es $archivos.
+			echo Número de archivos del grupo $grupo en $ruta es $archivos.
 		else
 			#Si no existe el archivo imprime el error
 			echo "El grupo no existe"
@@ -22,5 +23,5 @@ if [ -n "$1" ] && [ -n "$2" ]; then
 	echo "La ruta no existe"
 	fi
 else
-	echo No pasaron los correspondientes parametros: Grupo  		Ruta
+	echo No se pasó la cantidad adecuada de parámetros: Grupo Ruta
 fi
